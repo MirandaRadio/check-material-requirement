@@ -1,0 +1,35 @@
+{
+  "name": "@mirandaradio/check-material-requirement",
+  "version": "1.0.0",
+  "description": "Validador de materiales multimedia",
+  "main": "./dist/index.js",
+  "author": "Miranda Player",
+  "license": "UNLICENSED",
+  "private": true,
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "data"
+  ],
+  "scripts": {
+    "build": "babel src --out-dir dist && cpy src/index.d.ts dist --flat"
+  },
+  "dependencies": {
+    "decimal.js": "^10.4.3",
+    "file-type": "16.5.4",
+    "fluent-ffmpeg": "^2.1.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.27.4",
+    "@babel/preset-env": "^7.27.2",
+    "babel-cli": "^6.26.0",
+    "cpy-cli": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
