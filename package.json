@@ -1,6 +1,6 @@
 {
   "name": "@mirandaradio/check-material-requirement",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Validador de materiales multimedia",
   "main": "./dist/index.js",
   "author": "Miranda Player",
