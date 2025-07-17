@@ -7,10 +7,10 @@ ve al directorio de tu proyecto
   cd my-project
 ```
 
-installa la version mas actual de paquete
+instalar la version mas actual del paquete
 
 ```bash
-   npm install git+ssh://git@github.com/mirandaradio/check-material-requirement.git#1.0.2
+   npm install @mirandaplayer/check-material-requirement
 ```
 
-recoomedado siempre usar la ultima tag "#1.0.2" del paquete
+recomendado siempre usar la ultima tag "@1.0.3" del paquete

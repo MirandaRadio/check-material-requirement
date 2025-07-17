@@ -1,27 +1,27 @@
 {
   "1": [
-    {"meta_key": "max_size_mb", "meta_value":	"300"},
-    {"meta_key": "mime_type", "meta_value":	"video/mov"},
-    {"meta_key": "mime_type", "meta_value":	"video/mp4"},
-    {"meta_key": "max_duration", "meta_value":	"900"},
-    {"meta_key": "max_frame_rate", "meta_value":	"60"},
-    {"meta_key": "min_duration", "meta_value":	"3"},
-    {"meta_key": "min_frame_rate", "meta_value":	"23"},
-    {"meta_key": "max_bit_rate", "meta_value":	"25"},
-    {"meta_key": "min_aspect_ratio", "meta_value":	"0.01:1"},
-    {"meta_key": "max_aspect_ratio", "meta_value":	"10:1"},
-    {"meta_key": "max_width", "meta_value":	"1920"},
-    {"meta_key": "codec_video", "meta_value":	"h264"},
-    {"meta_key": "codec_video", "meta_value":	"hevc"},
-    {"meta_key": "codec_audio", "meta_value":	"aac"}
+    {"meta_key": "max_size_mb", "meta_value": "300"},
+    {"meta_key": "mime_type", "meta_value": "video/mov"},
+    {"meta_key": "mime_type", "meta_value": "video/mp4"},
+    {"meta_key": "max_duration", "meta_value": "900"},
+    {"meta_key": "max_frame_rate", "meta_value": "60"},
+    {"meta_key": "min_duration", "meta_value": "3"},
+    {"meta_key": "min_frame_rate", "meta_value": "23"},
+    {"meta_key": "max_bit_rate", "meta_value": "25"},
+    {"meta_key": "min_aspect_ratio", "meta_value": "0.01:1"},
+    {"meta_key": "max_aspect_ratio", "meta_value": "10:1"},
+    {"meta_key": "max_width", "meta_value": "1920"},
+    {"meta_key": "codec_video", "meta_value": "h264"},
+    {"meta_key": "codec_video", "meta_value": "hevc"},
+    {"meta_key": "codec_audio", "meta_value": "aac"}
   ],
   "2": [
     {"meta_key": "max_size_mb", "meta_value": "8"},
-    {"meta_key": "mime_type", "meta_value":	"image/jpeg"},
-    {"meta_key": "min_width", "meta_value":	"320"},
-    {"meta_key": "min_aspect_ratio", "meta_value":	"4:5"},
-    {"meta_key": "max_aspect_ratio", "meta_value":	"1.91:1"},
-    {"meta_key": "max_width", "meta_value":	"1440"}
+    {"meta_key": "mime_type", "meta_value": "image/jpeg"},
+    {"meta_key": "min_width", "meta_value": "320"},
+    {"meta_key": "min_aspect_ratio", "meta_value": "4:5"},
+    {"meta_key": "max_aspect_ratio", "meta_value": "1.91:1"},
+    {"meta_key": "max_width", "meta_value": "1440"}
 
   ],
   "7": [
@@ -133,7 +133,7 @@
     {"meta_key": "min_width_horizontal_px", "meta_value": "960"},
     {"meta_key": "min_width_vertical_px", "meta_value": "540"},
     {"meta_key": "max_square_px", "meta_value": "1080"},
-    {"meta_key": "max_bit_rate", "meta_value":	"25"},
+    {"meta_key": "max_bit_rate", "meta_value": "25"},
     {"meta_key": "aspect_ratio", "meta_value": "1:1"},
     {"meta_key": "aspect_ratio", "meta_value": "16:9"},
     {"meta_key": "aspect_ratio", "meta_value": "9:16"},
@@ -147,11 +147,11 @@
     {"meta_key": "mime_type", "meta_value": "image/jpg"},
     {"meta_key": "mime_type", "meta_value": "image/png"},
     {"meta_key": "min_height_vertical_px", "meta_value": "1067"},
-    {"meta_key": "min_square_px", "meta_value":	"600"},
-    {"meta_key": "min_width_vertical_px", "meta_value":	"600"},
-    {"meta_key": "max_square_px",	"meta_value":	"1200"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"1:1"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"9:16"}
+    {"meta_key": "min_square_px", "meta_value": "600"},
+    {"meta_key": "min_width_vertical_px", "meta_value": "600"},
+    {"meta_key": "max_square_px", "meta_value": "1200"},
+    {"meta_key": "aspect_ratio", "meta_value": "1:1"},
+    {"meta_key": "aspect_ratio", "meta_value": "9:16"}
   ],
   "22": [
     {"meta_key": "max_size_mb", "meta_value": "500"},
@@ -161,17 +161,17 @@
     {"meta_key": "mime_type", "meta_value": "video/mp4"},
     {"meta_key": "mime_type", "meta_value": "video/mpeg"},
     {"meta_key": "max_duration", "meta_value": "60"},
-    {"meta_key": "min_duration",	"meta_value":	"5"},
-    {"meta_key": "min_height_vertical_px",	"meta_value":	"960"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"1:1"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"16:9"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"9:16"},
-    {"meta_key": "codec_audio",	"meta_value":	"aac"}
+    {"meta_key": "min_duration", "meta_value": "5"},
+    {"meta_key": "min_height_vertical_px", "meta_value": "960"},
+    {"meta_key": "aspect_ratio", "meta_value": "1:1"},
+    {"meta_key": "aspect_ratio", "meta_value": "16:9"},
+    {"meta_key": "aspect_ratio", "meta_value": "9:16"},
+    {"meta_key": "codec_audio", "meta_value": "aac"}
   ],
   "23": [
-    {"meta_key": "aspect_ratio",	"meta_value":	"1:1"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"16:9"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"9:16"}
+    {"meta_key": "aspect_ratio", "meta_value": "1:1"},
+    {"meta_key": "aspect_ratio", "meta_value": "16:9"},
+    {"meta_key": "aspect_ratio", "meta_value": "9:16"}
   ],
   "24": [
     {"meta_key": "max_size_mb", "meta_value": "4096"},
@@ -182,13 +182,13 @@
     {"meta_key": "max_duration", "meta_value": "14400"},
     {"meta_key": "min_height_horizontal_px", "meta_value": "640"},
     {"meta_key": "min_height_vertical_px", "meta_value": "640"},
-    {"meta_key": "min_square_px",	"meta_value":	"640"},
-    {"meta_key": "min_width_horizontal_px",	"meta_value":	"640"},
-    {"meta_key": "min_width_vertical_px",	"meta_value":	"640"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"1:1"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"16:9"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"9:16"},
-    {"meta_key": "codec_audio",	"meta_value":	"aac"}
+    {"meta_key": "min_square_px", "meta_value": "640"},
+    {"meta_key": "min_width_horizontal_px", "meta_value": "640"},
+    {"meta_key": "min_width_vertical_px", "meta_value": "640"},
+    {"meta_key": "aspect_ratio", "meta_value": "1:1"},
+    {"meta_key": "aspect_ratio", "meta_value": "16:9"},
+    {"meta_key": "aspect_ratio", "meta_value": "9:16"},
+    {"meta_key": "codec_audio", "meta_value": "aac"}
   ],
   "25": [
     {"meta_key": "max_height_horizontal_px", "meta_value": "628"},
@@ -201,13 +201,13 @@
     {"meta_key": "mime_type", "meta_value": "image/png"},
     {"meta_key": "min_height_horizontal_px", "meta_value": "314"},
     {"meta_key": "min_height_vertical_px", "meta_value": "600"},
-    {"meta_key": "min_square_px",	"meta_value":	"600"},
-    {"meta_key": "min_width_horizontal_px",	"meta_value":	"600"},
-    {"meta_key": "min_width_vertical_px",	"meta_value":	"480"},
-    {"meta_key": "max_square_px",	"meta_value":	"1200"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"1:1"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"16:9"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"9:16"}
+    {"meta_key": "min_square_px", "meta_value": "600"},
+    {"meta_key": "min_width_horizontal_px", "meta_value": "600"},
+    {"meta_key": "min_width_vertical_px", "meta_value": "480"},
+    {"meta_key": "max_square_px", "meta_value": "1200"},
+    {"meta_key": "aspect_ratio", "meta_value": "1:1"},
+    {"meta_key": "aspect_ratio", "meta_value": "16:9"},
+    {"meta_key": "aspect_ratio", "meta_value": "9:16"}
   ],
   "26": [
     {"meta_key": "max_height_horizontal_px", "meta_value": "1080"},
@@ -223,12 +223,12 @@
     {"meta_key": "min_frame_rate", "meta_value": "24"},
     {"meta_key": "min_height_horizontal_px", "meta_value": "315"},
     {"meta_key": "min_height_vertical_px", "meta_value": "888"},
-    {"meta_key": "min_square_px",	"meta_value":	"600"},
-    {"meta_key": "min_width_horizontal_px",	"meta_value":	"600"},
-    {"meta_key": "min_width_vertical_px",	"meta_value":	"500"},
-    {"meta_key": "max_square_px",	"meta_value":	"1080"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"9:16"},
-    {"meta_key": "codec_audio",	"meta_value":	"aac"}
+    {"meta_key": "min_square_px", "meta_value": "600"},
+    {"meta_key": "min_width_horizontal_px", "meta_value": "600"},
+    {"meta_key": "min_width_vertical_px", "meta_value": "500"},
+    {"meta_key": "max_square_px", "meta_value": "1080"},
+    {"meta_key": "aspect_ratio", "meta_value": "9:16"},
+    {"meta_key": "codec_audio", "meta_value": "aac"}
   ],
   "27": [
     {"meta_key": "max_height_horizontal_px", "meta_value": "628"},
@@ -241,11 +241,11 @@
     {"meta_key": "mime_type", "meta_value": "image/png"},
     {"meta_key": "min_height_horizontal_px", "meta_value": "314"},
     {"meta_key": "min_height_vertical_px", "meta_value": "888"},
-    {"meta_key": "min_square_px",	"meta_value":	"600"},
-    {"meta_key": "min_width_horizontal_px",	"meta_value":	"600"},
-    {"meta_key": "min_width_vertical_px",	"meta_value":	"500"},
-    {"meta_key": "max_square_px",	"meta_value":	"1080"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"9:16"}
+    {"meta_key": "min_square_px", "meta_value": "600"},
+    {"meta_key": "min_width_horizontal_px", "meta_value": "600"},
+    {"meta_key": "min_width_vertical_px", "meta_value": "500"},
+    {"meta_key": "max_square_px", "meta_value": "1080"},
+    {"meta_key": "aspect_ratio", "meta_value": "9:16"}
   ],
   "28": [
     {"meta_key": "max_height_horizontal_px", "meta_value": "1080"},
@@ -257,16 +257,16 @@
     {"meta_key": "mime_type", "meta_value": "video/mp4"},
     {"meta_key": "max_duration", "meta_value": "15"},
     {"meta_key": "max_frame_rate", "meta_value": "60"},
-    {"meta_key": "min_duration",	"meta_value":	"1"},
-    {"meta_key": "min_frame_rate",	"meta_value":	"24"},
-    {"meta_key": "min_height_horizontal_px",	"meta_value":	"315"},
-    {"meta_key": "min_height_vertical_px",	"meta_value":	"888"},
-    {"meta_key": "min_square_px",	"meta_value":	"600"},
-    {"meta_key": "min_width_horizontal_px",	"meta_value":	"600"},
-    {"meta_key": "min_width_vertical_px",	"meta_value":	"500"},
-    {"meta_key": "max_square_px",	"meta_value":	"1080"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"9:16"},
-    {"meta_key": "codec_audio",	"meta_value":	"aac"}
+    {"meta_key": "min_duration", "meta_value": "1"},
+    {"meta_key": "min_frame_rate", "meta_value": "24"},
+    {"meta_key": "min_height_horizontal_px", "meta_value": "315"},
+    {"meta_key": "min_height_vertical_px", "meta_value": "888"},
+    {"meta_key": "min_square_px", "meta_value": "600"},
+    {"meta_key": "min_width_horizontal_px", "meta_value": "600"},
+    {"meta_key": "min_width_vertical_px", "meta_value": "500"},
+    {"meta_key": "max_square_px", "meta_value": "1080"},
+    {"meta_key": "aspect_ratio", "meta_value": "9:16"},
+    {"meta_key": "codec_audio", "meta_value": "aac"}
   ],
   "29": [
     {"meta_key": "max_height_horizontal_px", "meta_value": "628"},
@@ -279,11 +279,11 @@
     {"meta_key": "mime_type", "meta_value": "image/png"},
     {"meta_key": "min_height_horizontal_px", "meta_value": "314"},
     {"meta_key": "min_height_vertical_px", "meta_value": "888"},
-    {"meta_key": "min_square_px",	"meta_value":	"600"},
-    {"meta_key": "min_width_horizontal_px",	"meta_value":	"600"},
-    {"meta_key": "min_width_vertical_px",	"meta_value":	"500"},
-    {"meta_key": "max_square_px",	"meta_value":	"1080"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"9:16"}
+    {"meta_key": "min_square_px", "meta_value": "600"},
+    {"meta_key": "min_width_horizontal_px", "meta_value": "600"},
+    {"meta_key": "min_width_vertical_px", "meta_value": "500"},
+    {"meta_key": "max_square_px", "meta_value": "1080"},
+    {"meta_key": "aspect_ratio", "meta_value": "9:16"}
   ],
   "30": [
     {"meta_key": "max_height_horizontal_px", "meta_value": "1200"},
@@ -295,18 +295,18 @@
     {"meta_key": "mime_type", "meta_value": "video/mp4"},
     {"meta_key": "max_duration", "meta_value": "120"},
     {"meta_key": "max_frame_rate", "meta_value": "30"},
-    {"meta_key": "min_duration",	"meta_value":	"1"},
-    {"meta_key": "min_frame_rate",	"meta_value":	"30"},
-    {"meta_key": "min_height_horizontal_px",	"meta_value":	"360"},
-    {"meta_key": "min_height_vertical_px",	"meta_value":	"360"},
-    {"meta_key": "min_square_px",	"meta_value":	"600"},
-    {"meta_key": "min_width_horizontal_px",	"meta_value":	"600"},
-    {"meta_key": "min_width_vertical_px",	"meta_value":	"600"},
-    {"meta_key": "max_square_px",	"meta_value":	"1200"},
-    {"meta_key": "max_bit_rate",	"meta_value":	"25"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"1:1"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"16:9"},
-    {"meta_key": "codec_audio",	"meta_value":	"aac"}
+    {"meta_key": "min_duration", "meta_value": "1"},
+    {"meta_key": "min_frame_rate", "meta_value": "30"},
+    {"meta_key": "min_height_horizontal_px", "meta_value": "360"},
+    {"meta_key": "min_height_vertical_px", "meta_value": "360"},
+    {"meta_key": "min_square_px", "meta_value": "600"},
+    {"meta_key": "min_width_horizontal_px", "meta_value": "600"},
+    {"meta_key": "min_width_vertical_px", "meta_value": "600"},
+    {"meta_key": "max_square_px", "meta_value": "1200"},
+    {"meta_key": "max_bit_rate", "meta_value": "25"},
+    {"meta_key": "aspect_ratio", "meta_value": "1:1"},
+    {"meta_key": "aspect_ratio", "meta_value": "16:9"},
+    {"meta_key": "codec_audio", "meta_value": "aac"}
   ],
   "31": [
     {"meta_key": "max_height_horizontal_px", "meta_value": "1200"},
@@ -319,12 +319,12 @@
     {"meta_key": "mime_type", "meta_value": "image/png"},
     {"meta_key": "min_height_horizontal_px", "meta_value": "600"},
     {"meta_key": "min_height_vertical_px", "meta_value": "600"},
-    {"meta_key": "min_square_px",	"meta_value":	"600"},
-    {"meta_key": "min_width_horizontal_px",	"meta_value":	"600"},
-    {"meta_key": "min_width_vertical_px",	"meta_value":	"600"},
-    {"meta_key": "max_square_px",	"meta_value":	"1200"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"1:1"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"16:9"}
+    {"meta_key": "min_square_px", "meta_value": "600"},
+    {"meta_key": "min_width_horizontal_px", "meta_value": "600"},
+    {"meta_key": "min_width_vertical_px", "meta_value": "600"},
+    {"meta_key": "max_square_px", "meta_value": "1200"},
+    {"meta_key": "aspect_ratio", "meta_value": "1:1"},
+    {"meta_key": "aspect_ratio", "meta_value": "16:9"}
   ],
   "32": [
     {"meta_key": "max_height_horizontal_px", "meta_value": "1080"},
@@ -336,13 +336,13 @@
     {"meta_key": "mime_type", "meta_value": "video/ov"},
     {"meta_key": "max_duration", "meta_value": "30"},
     {"meta_key": "max_frame_rate", "meta_value": "60"},
-    {"meta_key": "min_frame_rate",	"meta_value":	"30"},
-    {"meta_key": "min_height_horizontal_px",	"meta_value":	"600"},
-    {"meta_key": "min_height_vertical_px",	"meta_value":	"600"},
-    {"meta_key": "min_width_horizontal_px",	"meta_value":	"600"},
-    {"meta_key": "min_width_vertical_px",	"meta_value":	"600"},
-    {"meta_key": "max_bit_rate",	"meta_value":	"25"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"16:9"}
+    {"meta_key": "min_frame_rate", "meta_value": "30"},
+    {"meta_key": "min_height_horizontal_px", "meta_value": "600"},
+    {"meta_key": "min_height_vertical_px", "meta_value": "600"},
+    {"meta_key": "min_width_horizontal_px", "meta_value": "600"},
+    {"meta_key": "min_width_vertical_px", "meta_value": "600"},
+    {"meta_key": "max_bit_rate", "meta_value": "25"},
+    {"meta_key": "aspect_ratio", "meta_value": "16:9"}
   ],
   "33": [
     {"meta_key": "max_size_mb", "meta_value": "30"},
@@ -374,17 +374,17 @@
     {"meta_key": "mime_type", "meta_value": "video/mp4"},
     {"meta_key": "max_duration", "meta_value": "360"},
     {"meta_key": "max_frame_rate", "meta_value": "60"},
-    {"meta_key": "min_duration",	"meta_value":	"1"},
-    {"meta_key": "min_frame_rate",	"meta_value":	"30"},
-    {"meta_key": "min_height_horizontal_px",	"meta_value":	"600"},
-    {"meta_key": "min_height_vertical_px",	"meta_value":	"600"},
-    {"meta_key": "min_square_px",	"meta_value":	"600"},
-    {"meta_key": "min_width_horizontal_px",	"meta_value":	"600"},
-    {"meta_key": "min_width_vertical_px",	"meta_value":	"600"},
-    {"meta_key": "max_square_px",	"meta_value":	"1920"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"16:9"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"9:16"},
-    {"meta_key": "codec_audio",	"meta_value":	"aac"}
+    {"meta_key": "min_duration", "meta_value": "1"},
+    {"meta_key": "min_frame_rate", "meta_value": "30"},
+    {"meta_key": "min_height_horizontal_px", "meta_value": "600"},
+    {"meta_key": "min_height_vertical_px", "meta_value": "600"},
+    {"meta_key": "min_square_px", "meta_value": "600"},
+    {"meta_key": "min_width_horizontal_px", "meta_value": "600"},
+    {"meta_key": "min_width_vertical_px", "meta_value": "600"},
+    {"meta_key": "max_square_px", "meta_value": "1920"},
+    {"meta_key": "aspect_ratio", "meta_value": "16:9"},
+    {"meta_key": "aspect_ratio", "meta_value": "9:16"},
+    {"meta_key": "codec_audio", "meta_value": "aac"}
   ],
   "36": [
     {"meta_key": "max_height_horizontal_px", "meta_value": "1920"},
@@ -396,16 +396,16 @@
     {"meta_key": "mime_type", "meta_value": "video/mp4"},
     {"meta_key": "max_duration", "meta_value": "60"},
     {"meta_key": "max_frame_rate", "meta_value": "60"},
-    {"meta_key": "min_duration",	"meta_value":	"1"},
-    {"meta_key": "min_frame_rate",	"meta_value":	"30"},
-    {"meta_key": "min_height_horizontal_px",	"meta_value":	"600"},
-    {"meta_key": "min_height_vertical_px",	"meta_value":	"600"},
-    {"meta_key": "min_square_px",	"meta_value":	"600"},
-    {"meta_key": "min_width_horizontal_px",	"meta_value":	"600"},
-    {"meta_key": "min_width_vertical_px",	"meta_value":	"600"},
-    {"meta_key": "max_square_px",	"meta_value":	"1920"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"9:16"},
-    {"meta_key": "codec_audio",	"meta_value":	"aac"}
+    {"meta_key": "min_duration", "meta_value": "1"},
+    {"meta_key": "min_frame_rate", "meta_value": "30"},
+    {"meta_key": "min_height_horizontal_px", "meta_value": "600"},
+    {"meta_key": "min_height_vertical_px", "meta_value": "600"},
+    {"meta_key": "min_square_px", "meta_value": "600"},
+    {"meta_key": "min_width_horizontal_px", "meta_value": "600"},
+    {"meta_key": "min_width_vertical_px", "meta_value": "600"},
+    {"meta_key": "max_square_px", "meta_value": "1920"},
+    {"meta_key": "aspect_ratio", "meta_value": "9:16"},
+    {"meta_key": "codec_audio", "meta_value": "aac"}
   ],
   "37": [
     {"meta_key": "max_height_horizontal_px", "meta_value": "1200"},
@@ -416,15 +416,15 @@
     {"meta_key": "mime_type", "meta_value": "image/jpeg"},
     {"meta_key": "mime_type", "meta_value": "image/jpg"},
     {"meta_key": "mime_type", "meta_value": "image/png"},
-    {"meta_key": "min_height_horizontal_px",	"meta_value":	"600"},
-    {"meta_key": "min_height_vertical_px",	"meta_value":	"600"},
-    {"meta_key": "min_square_px",	"meta_value":	"600"},
-    {"meta_key": "min_width_horizontal_px",	"meta_value":	"600"},
-    {"meta_key": "min_width_vertical_px",	"meta_value":	"600"},
-    {"meta_key": "max_square_px",	"meta_value":	"1200"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"1:1"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"16:9"},
-    {"meta_key": "aspect_ratio",	"meta_value":	"9:16"}
+    {"meta_key": "min_height_horizontal_px", "meta_value": "600"},
+    {"meta_key": "min_height_vertical_px", "meta_value": "600"},
+    {"meta_key": "min_square_px", "meta_value": "600"},
+    {"meta_key": "min_width_horizontal_px", "meta_value": "600"},
+    {"meta_key": "min_width_vertical_px", "meta_value": "600"},
+    {"meta_key": "max_square_px", "meta_value": "1200"},
+    {"meta_key": "aspect_ratio", "meta_value": "1:1"},
+    {"meta_key": "aspect_ratio", "meta_value": "16:9"},
+    {"meta_key": "aspect_ratio", "meta_value": "9:16"}
   ],
   "38": [
     {"meta_key": "max_size_mb", "meta_value": "8"},
@@ -492,6 +492,59 @@
     {"meta_key": "mime_type", "meta_value": "image/jpg"},
     {"meta_key": "min_height", "meta_value": "1920"},
     {"meta_key": "min_width", "meta_value": "1080"},
+    {"meta_key": "aspect_ratio", "meta_value": "9:16"}
+  ],
+  "48": [
+    {"meta_key": "mime_type", "meta_value": "video/mov"},
+    {"meta_key": "mime_type", "meta_value": "video/mp4"},
+    {"meta_key": "min_height", "meta_value": "1280"},
+    {"meta_key": "min_width", "meta_value": "720"},
+    {"meta_key": "aspect_ratio", "meta_value": "9:16"}
+  ],
+  "49": [
+    {"meta_key": "mime_type", "meta_value": "image/jpeg"},
+    {"meta_key": "mime_type", "meta_value": "image/jpg"},
+    {"meta_key": "mime_type", "meta_value": "image/png"},
+    {"meta_key": "min_height", "meta_value": "1024"},
+    {"meta_key": "min_width", "meta_value": "1024"},
+    {"meta_key": "aspect_ratio", "meta_value": "1:1"}
+  ],
+  "50": [
+    {"meta_key": "max_height_horizontal_px", "meta_value": ""},
+    {"meta_key": "mime_type", "meta_value": "image/jpg"},
+    {"meta_key": "min_width", "meta_value": "1080"},
+    {"meta_key": "aspect_ratio", "meta_value": "9:16"}
+  ],
+  "51": [
+    {"meta_key": "mime_type", "meta_value": "image/jpeg"},
+    {"meta_key": "mime_type", "meta_value": "image/jpg"},
+    {"meta_key": "mime_type", "meta_value": "image/png"},
+    {"meta_key": "min_width", "meta_value": "1080"},
+    {"meta_key": "aspect_ratio", "meta_value": "3:2"}
+  ],
+  "52": [
+    {"meta_key": "mime_type", "meta_value": "image/jpeg"},
+    {"meta_key": "mime_type", "meta_value": "image/jpg"},
+    {"meta_key": "min_width", "meta_value": "1024"},
+    {"meta_key": "aspect_ratio", "meta_value": "1:1"}
+  ],
+  "53": [
+    {"meta_key": "mime_type", "meta_value": "video/mp4"},
+    {"meta_key": "min_width", "meta_value": "720"},
+    {"meta_key": "aspect_ratio", "meta_value": "1:1"}
+  ],
+  "54": [
+    {"meta_key": "mime_type", "meta_value": "image/jpeg"},
+    {"meta_key": "mime_type", "meta_value": "image/jpg"},
+    {"meta_key": "mime_type", "meta_value": "image/png"},
+    {"meta_key": "min_width", "meta_value": "1024"},
+    {"meta_key": "aspect_ratio", "meta_value": "1:1"}
+  ],
+  "55": [
+    {"meta_key": "mime_type", "meta_value": "image/jpeg"},
+    {"meta_key": "mime_type", "meta_value": "image/jpg"},
+    {"meta_key": "mime_type", "meta_value": "image/png"},
+    {"meta_key": "min_width", "meta_value": "1024"},
     {"meta_key": "aspect_ratio", "meta_value": "9:16"}
   ]
 }

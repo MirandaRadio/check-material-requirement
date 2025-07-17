@@ -1,11 +1,11 @@
 {
-  "name": "@mirandaradio/check-material-requirement",
-  "version": "1.0.2",
+  "name": "@mirandaplayer/check-material-requirement",
+  "version": "1.0.3",
   "description": "Validador de materiales multimedia",
   "main": "./dist/index.js",
   "author": "Miranda Player",
-  "license": "UNLICENSED",
-  "private": true,
+  "license": "MIT",
+  "private": false,
   "types": "./dist/index.d.ts",
   "exports": {
     "import": "./dist/index.js",
@@ -17,6 +17,9 @@
   ],
   "scripts": {
     "build": "babel src --out-dir dist && cpy src/index.d.ts dist --flat"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
     "decimal.js": "^10.4.3",
