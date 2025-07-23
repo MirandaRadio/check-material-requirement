@@ -131,7 +131,6 @@ async function checkRequirementsMaterial(file, setBufferFile, detailFormat) {
       // COMPROBACIÓN DE INTERVALOS DE ASPECT RATIO
       const minAspectRatio = (getSubmediaRequirements.find(x => x.meta_key == 'min_aspect_ratio') || {}).meta_value
       const maxAspectRatio = (getSubmediaRequirements.find(x => x.meta_key == 'max_aspect_ratio') || {}).meta_value
-      console.log('minAspectRatio', minAspectRatio, 'maxAspectRatio', maxAspectRatio);
       if(!!minAspectRatio && !!maxAspectRatio){
         const checkAspectRatio = isAspectRatioInRange(width, height, minAspectRatio, maxAspectRatio)
         requirements.push({

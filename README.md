@@ -13,4 +13,11 @@ instalar la version mas actual del paquete
    npm install @mirandaplayer/check-material-requirement
 ```
 
-recomendado siempre usar la ultima tag "@1.0.3" del paquete
+recomendado siempre usar la ultima tag "@1.0.6" del paquete
+
+publicar el paquete en tu proyecto
+
+```bash
+  npm run build
+  npm publish --access public
+```

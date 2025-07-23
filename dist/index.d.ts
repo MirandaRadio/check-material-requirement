@@ -1,4 +1,4 @@
-declare module '@miranda/check-material-validate' {
+declare module '@mirandaplayer/check-material-requirement' {
   export function checkRequirementsMaterial(
     file: any,
     setBufferFile: any,
