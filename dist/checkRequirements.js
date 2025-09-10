@@ -24,13 +24,16 @@ async function checkRequirementsMaterial(file, setBufferFile, detailFormat) {
         getSubmediaRequirements = await getSubmediaRequirements;
       }
       if (!getSubmediaRequirements || getSubmediaRequirements.length === 0) {
-        throw new Error('No se ha podido recuperar los requisitos del formato.');
+        throw new Error(`No se ha podido recuperar los requisitos del formato. Formato: ${detailFormat.id_placement}`);
       }
 
       // INFORMACIÓN GENERAL DE LOS METADATOS DE UN MATERIAL SUBIDO.
       const responseMetadata = await getMaterialMetadata(file.path);
 
-      const { width, height, duration, frame_rate, aspect_ratio, codec_video, coded_audio, bit_rate } = responseMetadata.data;
+      const { width, height, duration, frame_rate, aspect_ratio, codec_video, coded_audio, bit_rate, sample_rate, channels } = responseMetadata.data;
+
+      // Determinar si es un archivo de audio puro
+      const isAudioOnly = width === null && height === null;
 
       // ####################################################################
       // COMPROBACION DE LAS EXTENSIONES PERMITIDAS.
@@ -62,32 +65,34 @@ async function checkRequirementsMaterial(file, setBufferFile, detailFormat) {
       }
 
       // ####################################################################
-      // COMPROBACIÓN DE LA RESOLUCIÓN.
-      const maxHeigthHorizontal = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'max_height_horizontal_px') || {}).meta_value || 0);
-      const maxWidthHorizontal = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'max_width_horizontal_px') || {}).meta_value || 0);
-      const maxHeigthVertical = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'max_height_vertical_px') || {}).meta_value || 0);
-      const maxWidthVertical = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'max_width_vertical_px') || {}).meta_value || 0);
+      // COMPROBACIÓN DE LA RESOLUCIÓN (solo para videos e imágenes).
+      if (!isAudioOnly) {
+        const maxHeigthHorizontal = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'max_height_horizontal_px') || {}).meta_value || 0);
+        const maxWidthHorizontal = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'max_width_horizontal_px') || {}).meta_value || 0);
+        const maxHeigthVertical = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'max_height_vertical_px') || {}).meta_value || 0);
+        const maxWidthVertical = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'max_width_vertical_px') || {}).meta_value || 0);
 
-      if (!!maxHeigthHorizontal || !!maxWidthHorizontal || !!maxHeigthVertical || !!maxWidthVertical) {
-        requirements.push({
-          title: 'Resoluciones',
-          type: 'resolution',
-          status: width <= maxWidthHorizontal && height <= maxHeigthHorizontal || width <= maxWidthVertical && height <= maxHeigthVertical,
-          value: `Ancho ${width} y Alto ${height}`,
-          allowed: [`Horizontal ancho máximo ${maxWidthHorizontal}px.`, `Horizontal alto máximo ${maxHeigthHorizontal}px.`, `Vertical ancho máximo ${maxWidthVertical}px.`, `Vertical alto máximo ${maxHeigthVertical}px.`] });
-      }
+        if (!!maxHeigthHorizontal || !!maxWidthHorizontal || !!maxHeigthVertical || !!maxWidthVertical) {
+          requirements.push({
+            title: 'Resoluciones',
+            type: 'resolution',
+            status: width <= maxWidthHorizontal && height <= maxHeigthHorizontal || width <= maxWidthVertical && height <= maxHeigthVertical,
+            value: `Ancho ${width} y Alto ${height}`,
+            allowed: [`Horizontal ancho máximo ${maxWidthHorizontal}px.`, `Horizontal alto máximo ${maxHeigthHorizontal}px.`, `Vertical ancho máximo ${maxWidthVertical}px.`, `Vertical alto máximo ${maxHeigthVertical}px.`] });
+        }
 
-      // COMPRBACIÓN MÍNIMA DE TAMAÑOS. 
-      const minHeight = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'min_height') || {}).meta_value || 0);
-      const minWidth = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'min_width') || {}).meta_value || 0);
-      if (!!minHeight || !!minWidth) {
-        requirements.push({
-          title: 'Tamaños mínimos',
-          type: 'min_size',
-          status: width >= minWidth && height >= minHeight,
-          value: `Ancho ${width} y Alto ${height}`,
-          allowed: [`${minWidth}px Ancho mínimo.`, `${minHeight}px Alto mínimo.`]
-        });
+        // COMPRBACIÓN MÍNIMA DE TAMAÑOS. 
+        const minHeight = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'min_height') || {}).meta_value || 0);
+        const minWidth = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'min_width') || {}).meta_value || 0);
+        if (!!minHeight || !!minWidth) {
+          requirements.push({
+            title: 'Tamaños mínimos',
+            type: 'min_size',
+            status: width >= minWidth && height >= minHeight,
+            value: `Ancho ${width} y Alto ${height}`,
+            allowed: [`${minWidth}px Ancho mínimo.`, `${minHeight}px Alto mínimo.`]
+          });
+        }
       }
 
       // COMPROBACIÓN DE LA DURACIÓN DEL MATERIAL
@@ -103,55 +108,91 @@ async function checkRequirementsMaterial(file, setBufferFile, detailFormat) {
         });
       }
 
-      // COMPROBACIÓN DE LOS FRAMES POR SEGUNDOS (FPS)
-      const minFrameRate = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'min_frame_rate') || {}).meta_value || 0);
-      const maxFrameRate = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'max_frame_rate') || {}).meta_value || 0);
-      if (!!minFrameRate || !!maxFrameRate) {
-        requirements.push({
-          title: 'Frames por segundo',
-          type: 'frame_rate',
-          status: frame_rate >= minFrameRate && frame_rate <= maxFrameRate,
-          value: frame_rate,
-          allowed: [`${minFrameRate} FPS Mínimo.`, `${maxFrameRate} FPS Máximos.`]
-        });
+      // COMPROBACIÓN DE LOS FRAMES POR SEGUNDOS (FPS) - solo para videos
+      if (!isAudioOnly) {
+        const minFrameRate = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'min_frame_rate') || {}).meta_value || 0);
+        const maxFrameRate = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'max_frame_rate') || {}).meta_value || 0);
+        if (!!minFrameRate || !!maxFrameRate) {
+          requirements.push({
+            title: 'Frames por segundo',
+            type: 'frame_rate',
+            status: frame_rate >= minFrameRate && frame_rate <= maxFrameRate,
+            value: frame_rate,
+            allowed: [`${minFrameRate} FPS Mínimo.`, `${maxFrameRate} FPS Máximos.`]
+          });
+        }
       }
 
-      // COMPROBACIÓN ASPECT RATIO.
-      const avaliableAspectRatios = [...new Set(getSubmediaRequirements.filter(x => x.meta_key == 'aspect_ratio').map(x => x.meta_value))];
-      if (avaliableAspectRatios.length > 0) {
-        requirements.push({
-          title: 'Aspect Ratio',
-          type: 'aspect_ratio',
-          status: avaliableAspectRatios.includes(aspect_ratio),
-          value: aspect_ratio,
-          allowed: avaliableAspectRatios
-        });
+      // COMPROBACIÓN ASPECT RATIO (solo para videos e imágenes).
+      if (!isAudioOnly) {
+        const avaliableAspectRatios = [...new Set(getSubmediaRequirements.filter(x => x.meta_key == 'aspect_ratio').map(x => x.meta_value))];
+        if (avaliableAspectRatios.length > 0) {
+          requirements.push({
+            title: 'Aspect Ratio',
+            type: 'aspect_ratio',
+            status: avaliableAspectRatios.includes(aspect_ratio),
+            value: aspect_ratio,
+            allowed: avaliableAspectRatios
+          });
+        }
+
+        // COMPROBACIÓN DE INTERVALOS DE ASPECT RATIO
+        const minAspectRatio = (getSubmediaRequirements.find(x => x.meta_key == 'min_aspect_ratio') || {}).meta_value;
+        const maxAspectRatio = (getSubmediaRequirements.find(x => x.meta_key == 'max_aspect_ratio') || {}).meta_value;
+        if (!!minAspectRatio && !!maxAspectRatio) {
+          const checkAspectRatio = isAspectRatioInRange(width, height, minAspectRatio, maxAspectRatio);
+          requirements.push({
+            title: 'Aspect Ratio Intervalos',
+            type: 'aspect_ratio_interval',
+            status: checkAspectRatio,
+            value: `${aspect_ratio}, ${width}x${height}`,
+            allowed: [`Intervalo de aspect ratio ${minAspectRatio} - ${maxAspectRatio}`]
+          });
+        }
       }
 
-      // COMPROBACIÓN DE INTERVALOS DE ASPECT RATIO
-      const minAspectRatio = (getSubmediaRequirements.find(x => x.meta_key == 'min_aspect_ratio') || {}).meta_value;
-      const maxAspectRatio = (getSubmediaRequirements.find(x => x.meta_key == 'max_aspect_ratio') || {}).meta_value;
-      if (!!minAspectRatio && !!maxAspectRatio) {
-        const checkAspectRatio = isAspectRatioInRange(width, height, minAspectRatio, maxAspectRatio);
-        requirements.push({
-          title: 'Aspect Ratio Intervalos',
-          type: 'aspect_ratio_interval',
-          status: checkAspectRatio,
-          value: `${aspect_ratio}, ${width}x${height}`,
-          allowed: [`Intervalo de aspect ratio ${minAspectRatio} - ${maxAspectRatio}`]
-        });
+      // ####################################################################
+      // VALIDACIONES ESPECÍFICAS PARA AUDIO
+      if (isAudioOnly) {
+        // COMPROBACIÓN DE SAMPLE RATE
+        const minSampleRate = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'min_sample_rate') || {}).meta_value || 0);
+        const maxSampleRate = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'max_sample_rate') || {}).meta_value || 0);
+        if (!!minSampleRate || !!maxSampleRate) {
+          requirements.push({
+            title: 'Sample Rate',
+            type: 'sample_rate',
+            status: sample_rate >= minSampleRate && sample_rate <= maxSampleRate,
+            value: `${sample_rate} Hz`,
+            allowed: [`${minSampleRate} Hz Mínimo.`, `${maxSampleRate} Hz Máximo.`]
+          });
+        }
+
+        // COMPROBACIÓN DE CANALES
+        const minChannels = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'min_channels') || {}).meta_value || 0);
+        const maxChannels = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'max_channels') || {}).meta_value || 0);
+        if (!!minChannels || !!maxChannels) {
+          requirements.push({
+            title: 'Canales de Audio',
+            type: 'channels',
+            status: channels >= minChannels && channels <= maxChannels,
+            value: channels,
+            allowed: [`${minChannels} canales mínimo.`, `${maxChannels} canales máximo.`]
+          });
+        }
       }
 
-      // COMPROBACIÓN DE LOS CODEC DE VIDEOS,.
-      const avaliableCodecVideos = [...new Set(getSubmediaRequirements.filter(x => x.meta_key == 'codec_video').map(x => String(x.meta_value).trim().toLowerCase()))];
-      if (avaliableCodecVideos.length > 0) {
-        requirements.push({
-          title: 'Codec Video',
-          type: 'codec_video',
-          status: avaliableCodecVideos.includes(codec_video),
-          value: codec_video,
-          allowed: avaliableCodecVideos
-        });
+      // COMPROBACIÓN DE LOS CODEC DE VIDEOS (solo para videos).
+      if (!isAudioOnly) {
+        const avaliableCodecVideos = [...new Set(getSubmediaRequirements.filter(x => x.meta_key == 'codec_video').map(x => String(x.meta_value).trim().toLowerCase()))];
+        if (avaliableCodecVideos.length > 0) {
+          requirements.push({
+            title: 'Codec Video',
+            type: 'codec_video',
+            status: avaliableCodecVideos.includes(codec_video),
+            value: codec_video,
+            allowed: avaliableCodecVideos
+          });
+        }
       }
 
       // COMPROBACIÓN DE LOS CODEC DE AUDIOS.

@@ -10,10 +10,38 @@ async function getMaterialMetadata(filePath = '') {
     });
   })
 
-  const findMain = response.streams.find(x => x.codec_type == 'video')
-  if(!findMain){ throw new Error('No se ha encontrado información del video.') }
-
+  const findVideo = response.streams.find(x => x.codec_type == 'video')
   const findAudio = response.streams.find(x => x.codec_type == 'audio') || {}
+  
+  // Determinar si es video/imagen o solo audio
+  const isAudioOnly = !findVideo && findAudio.codec_type === 'audio'
+  const findMain = findVideo || findAudio
+  
+  if(!findMain){ 
+    throw new Error('No se ha encontrado información del archivo multimedia.') 
+  }
+
+  // Para archivos de audio, usar propiedades específicas
+  if (isAudioOnly) {
+    return { 
+      status: true,
+      data: {
+        duration: response.format.duration,
+        size: response.format.size,
+        width: null,
+        height: null,
+        aspect_ratio: null,
+        frame_rate: null,
+        bit_rate: parseNum((findMain.bit_rate / 1000000), 2),
+        codec_video: null,
+        coded_audio: String(findMain.codec_name || '').trim().toLowerCase(),
+        sample_rate: findMain.sample_rate || null,
+        channels: findMain.channels || null
+      }
+    }
+  }
+
+  // Para videos e imágenes (comportamiento original)
   const [fps, speed] = String(findMain.avg_frame_rate || '').split('/')
   return { 
     status: true,
@@ -26,7 +54,9 @@ async function getMaterialMetadata(filePath = '') {
       frame_rate: (Number(fps || 0) / Number(speed || 1)).toFixed(0),
       bit_rate: parseNum((findMain.bit_rate / 1000000), 2),
       codec_video: String(findMain.codec_name || '').trim().toLowerCase(),
-      coded_audio: String(findAudio.codec_name || '').trim().toLowerCase()
+      coded_audio: String(findAudio.codec_name || '').trim().toLowerCase(),
+      sample_rate: findAudio.sample_rate || null,
+      channels: findAudio.channels || null
     }
   }
 }
