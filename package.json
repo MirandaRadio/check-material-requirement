@@ -1,6 +1,6 @@
 {
   "name": "@mirandaplayer/check-material-requirement",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Validador de materiales multimedia",
   "main": "./dist/index.js",
   "author": "Miranda Player",

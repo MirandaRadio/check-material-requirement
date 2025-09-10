@@ -3,6 +3,25 @@ const reqData = require('../data/requirements.json');
 const { getMaterialMetadata, parseNum, isAspectRatioInRange } = require('./utils');
 const FileType = require('file-type');
 
+// Función para normalizar MIME types y manejar equivalencias
+function normalizeMimeType(mimeType) {
+  const equivalences = {
+    'audio/mpeg': 'audio/mp3', // audio/mpeg es equivalente a audio/mp3
+    'audio/mp3': 'audio/mp3', // audio/mp3 permanece igual
+    'video/quicktime': 'video/mov' // .mov files
+  };
+
+  return equivalences[mimeType] || mimeType;
+}
+
+// Función para verificar si un MIME type es válido considerando equivalencias
+function isMimeTypeValid(detectedMime, allowedMimes) {
+  const normalizedDetected = normalizeMimeType(detectedMime);
+  const normalizedAllowed = allowedMimes.map(mime => normalizeMimeType(mime));
+
+  return normalizedAllowed.includes(normalizedDetected) || allowedMimes.includes(detectedMime);
+}
+
 async function checkRequirementsMaterial(file, setBufferFile, detailFormat) {
 
   try {
@@ -40,10 +59,11 @@ async function checkRequirementsMaterial(file, setBufferFile, detailFormat) {
       const avaliableExtension = [...new Set(getSubmediaRequirements.filter(x => x.meta_key == 'mime_type').map(x => x.meta_value))];
       if (avaliableExtension.length > 0) {
         const { ext, mime } = await FileType.fromBuffer(setBufferFile);
+        const isValidMime = isMimeTypeValid(mime, avaliableExtension);
         requirements.push({
           title: 'Extensiones',
           type: 'mime_type',
-          status: avaliableExtension.includes(mime),
+          status: isValidMime,
           value: mime,
           allowed: avaliableExtension
         });
