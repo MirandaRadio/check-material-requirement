@@ -34,7 +34,7 @@ async function getMaterialMetadata(filePath = '') {
         height: null,
         aspect_ratio: null,
         frame_rate: null,
-        bit_rate: parseNum(findMain.bit_rate / 1000000, 2),
+        bit_rate: parseNum(findMain.bit_rate / 1000, 2), // Convertir a kbps para audio
         codec_video: null,
         coded_audio: String(findMain.codec_name || '').trim().toLowerCase(),
         sample_rate: findMain.sample_rate || null,
