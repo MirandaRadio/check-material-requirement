@@ -464,7 +464,9 @@
   "43": [
     {"meta_key": "min_height", "meta_value": "1920"},
     {"meta_key": "min_width", "meta_value": "1080"},
-    {"meta_key": "aspect_ratio", "meta_value": "9:16"}
+    {"meta_key": "aspect_ratio", "meta_value": "9:16"},
+    {"meta_key": "aspect_ratio", "meta_value": "1:1"},
+    {"meta_key": "aspect_ratio", "meta_value": "16:9"}
   ],
   "44": [
     {"meta_key": "mime_type", "meta_value": "video/mov"},

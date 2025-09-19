@@ -3,35 +3,8 @@ const reqData = require('../data/requirements.json');
 const { getMaterialMetadata, parseNum, isAspectRatioInRange } = require('./utils');
 const FileType = require('file-type');
 
-// Función para normalizar MIME types y manejar eq      // COMPROBACIÓN DEL MÍNIMO Y MÁXIMO DEL BIT-RATE
-      const minBitRate = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'min_bit_rate') || {}).meta_value || 0);
-      const maxBitRate = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'max_bit_rate') || {}).meta_value || 0);
-      if (!!minBitRate || !!maxBitRate) {
-        // Para audio, convertir los límites de Mbps a kbps para comparación correcta
-        let actualBitRate = bit_rate;
-        let minLimit = minBitRate;
-        let maxLimit = maxBitRate;
-        let unit = 'Mbps';
-        
-        if (isAudioOnly) {
-          // Los archivos de audio ya están en kbps, pero los límites podrían estar en Mbps
-          // Si el límite máximo es menor que el bit-rate, probablemente los límites están en Mbps
-          if (maxBitRate > 0 && maxBitRate < bit_rate && bit_rate > 50) {
-            // Convertir límites de Mbps a kbps
-            minLimit = minBitRate * 1000;
-            maxLimit = maxBitRate * 1000;
-          }
-          unit = 'kbps';
-        }
-        
-        requirements.push({
-          title: 'Bit-Rate',
-          type: 'bit_rate',
-          status: actualBitRate >= minLimit && actualBitRate <= maxLimit,
-          value: `${actualBitRate} ${unit}`,
-          allowed: [ `${minLimit} ${unit} Mínimo.`, `${maxLimit} ${unit} Máximo.`]
-        });
-      }function normalizeMimeType(mimeType) {
+// Función para normalizar MIME types y manejar equivalencias
+function normalizeMimeType(mimeType) {
   const equivalences = {
     'audio/mpeg': 'audio/mp3', // audio/mpeg es equivalente a audio/mp3
     'audio/mp3': 'audio/mp3', // audio/mp3 permanece igual
@@ -258,12 +231,29 @@ async function checkRequirementsMaterial(file, setBufferFile, detailFormat) {
       const minBitRate = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'min_bit_rate') || {}).meta_value || 0);
       const maxBitRate = parseFloat((getSubmediaRequirements.find(x => x.meta_key == 'max_bit_rate') || {}).meta_value || 0);
       if (!!minBitRate || !!maxBitRate) {
+        // Para audio, convertir los límites de Mbps a kbps para comparación correcta
+        let actualBitRate = bit_rate;
+        let minLimit = minBitRate;
+        let maxLimit = maxBitRate;
+        let unit = 'Mbps';
+
+        if (isAudioOnly) {
+          // Los archivos de audio ya están en kbps, pero los límites podrían estar en Mbps
+          // Si el límite máximo es menor que el bit-rate, probablemente los límites están en Mbps
+          if (maxBitRate > 0 && maxBitRate < bit_rate && bit_rate > 50) {
+            // Convertir límites de Mbps a kbps
+            minLimit = minBitRate * 1000;
+            maxLimit = maxBitRate * 1000;
+          }
+          unit = 'kbps';
+        }
+
         requirements.push({
           title: 'Bit-Rate',
           type: 'bit_rate',
-          status: bit_rate >= minBitRate && bit_rate <= maxBitRate,
-          value: bit_rate,
-          allowed: [`${minBitRate} Bitrate Mínimo.`, `${maxBitRate} Bitrate Máximo.`]
+          status: actualBitRate >= minLimit && actualBitRate <= maxLimit,
+          value: `${actualBitRate} ${unit}`,
+          allowed: [`${minLimit} ${unit} Mínimo.`, `${maxLimit} ${unit} Máximo.`]
         });
       }
     }
