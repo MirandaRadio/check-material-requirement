@@ -155,22 +155,30 @@
   ],
   "22": [
     {"meta_key": "max_size_mb", "meta_value": "500"},
-    {"meta_key": "max_width_vertical_px", "meta_value": "540"},
-    {"meta_key": "mime_type", "meta_value": "3gp"},
     {"meta_key": "mime_type", "meta_value": "video/mov"},
     {"meta_key": "mime_type", "meta_value": "video/mp4"},
     {"meta_key": "mime_type", "meta_value": "video/mpeg"},
     {"meta_key": "max_duration", "meta_value": "60"},
     {"meta_key": "min_duration", "meta_value": "5"},
     {"meta_key": "min_height_vertical_px", "meta_value": "960"},
-    {"meta_key": "aspect_ratio", "meta_value": "1:1"},
-    {"meta_key": "aspect_ratio", "meta_value": "16:9"},
+    {"meta_key": "min_width_vertical_px", "meta_value": "540"},
+    {"meta_key": "max_height_vertical_px", "meta_value": "1920"},
+    {"meta_key": "max_width_vertical_px", "meta_value": "1080"},
     {"meta_key": "aspect_ratio", "meta_value": "9:16"},
     {"meta_key": "codec_audio", "meta_value": "aac"}
   ],
   "23": [
+    {"meta_key": "max_size_mb", "meta_value": "500"},
+    {"meta_key": "mime_type", "meta_value": "image/jpeg"},
+    {"meta_key": "mime_type", "meta_value": "image/jpg"},
+    {"meta_key": "mime_type", "meta_value": "image/png"},
+    {"meta_key": "min_height_vertical_px", "meta_value": "1067"},
+    {"meta_key": "min_width_vertical_px", "meta_value": "600"},
+    {"meta_key": "max_height_vertical_px", "meta_value": "1920"},
+    {"meta_key": "max_width_vertical_px", "meta_value": "1080"},
+    {"meta_key": "min_square_px", "meta_value": "600"},
+    {"meta_key": "max_square_px", "meta_value": "1200"},
     {"meta_key": "aspect_ratio", "meta_value": "1:1"},
-    {"meta_key": "aspect_ratio", "meta_value": "16:9"},
     {"meta_key": "aspect_ratio", "meta_value": "9:16"}
   ],
   "24": [
@@ -428,6 +436,7 @@
   ],
   "38": [
     {"meta_key": "max_size_mb", "meta_value": "8"},
+    {"meta_key": "mime_type", "meta_value": "image/jpg"},
     {"meta_key": "mime_type", "meta_value": "image/jpeg"},
     {"meta_key": "min_width", "meta_value": "1024"},
     {"meta_key": "min_aspect_ratio", "meta_value": "1:1"},
@@ -514,6 +523,7 @@
   "50": [
     {"meta_key": "max_height_horizontal_px", "meta_value": ""},
     {"meta_key": "mime_type", "meta_value": "image/jpg"},
+    {"meta_key": "mime_type", "meta_value": "image/jpeg"},
     {"meta_key": "min_width", "meta_value": "1080"},
     {"meta_key": "aspect_ratio", "meta_value": "9:16"}
   ],
