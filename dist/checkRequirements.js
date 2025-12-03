@@ -133,7 +133,7 @@ async function checkRequirementsMaterial(file, setBufferFile, objectRequirements
 
     // COMPROBACIÓN ASPECT RATIO (solo para videos e imágenes).
     if (!isAudioOnly) {
-      const avaliableAspectRatios = !!objectRequirements.aspect_ratio ? [objectRequirements.aspect_ratio] : [];
+      const avaliableAspectRatios = !!objectRequirements.aspect_ratio ? objectRequirements.aspect_ratio : [];
       if (avaliableAspectRatios.length > 0) {
         requirements.push({
           title: 'Aspect Ratio',
@@ -191,7 +191,7 @@ async function checkRequirementsMaterial(file, setBufferFile, objectRequirements
 
     // COMPROBACIÓN DE LOS CODEC DE VIDEOS (solo para videos).
     if (!isAudioOnly) {
-      const avaliableCodecVideos = !!objectRequirements.codec_video ? [objectRequirements.codec_video] : [];
+      const avaliableCodecVideos = !!objectRequirements.codec_video ? objectRequirements.codec_video : [];
       if (avaliableCodecVideos.length > 0) {
         requirements.push({
           title: 'Codec Video',
@@ -204,7 +204,7 @@ async function checkRequirementsMaterial(file, setBufferFile, objectRequirements
     }
 
     // COMPROBACIÓN DE LOS CODEC DE AUDIOS.
-    const avaliableCodecAudios = !!objectRequirements.codec_audio ? [objectRequirements.codec_audio] : [];
+    const avaliableCodecAudios = !!objectRequirements.codec_audio ? objectRequirements.codec_audio : [];
     if (avaliableCodecAudios.length > 0) {
       requirements.push({
         title: 'Codec Audio',
