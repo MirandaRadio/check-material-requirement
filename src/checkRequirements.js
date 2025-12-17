@@ -241,7 +241,6 @@ async function checkRequirementsMaterial(file, setBufferFile, objectRequirements
 
     return requirements;
   } catch (error) {
-    console.error(error);
     return []
   }
 }
